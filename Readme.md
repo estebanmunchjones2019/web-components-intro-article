@@ -20,17 +20,17 @@ Table of contents:
 
   
 
-_Acknowledgments: the content of this article was inspired by [Nikos Tsokos](https://twitter.com/n_tsokos), member of [Scotland's Angular Meetup](https://www.youtube.com/channel/UCWIfQn9vUayDkzrrDIjdAjg)_.
+_Special thanks to: [Nikos Tsokos](https://twitter.com/n_tsokos), member of [Scotland's Angular Meetup](https://www.youtube.com/channel/UCWIfQn9vUayDkzrrDIjdAjg) who inspired me to write this article,  [Gonzalo Aguirre](https://twitter.com/\_gonaguirre) Co-Founder & CTO of [Underscope](https://underscope.io), and my fiancée Sarah Acheson for reviewing it._
 
-**Note: when you copy and paste code from the code snippets, don't include the top comment that tells the name of the file, like `//App.js` or `//index.html`.**
+**Note: when you copy and paste code from the code snippets, don't include the top comment that tells the name of the file, like `//App.js` or `//index.html` because it may break your code.**
 
 ## What are web components?
 
 Web Components are a set of web platform APIs that allow you to **create new custom, reusable, encapsulated HTML tags** to use in web pages and web apps.
 
-For example, we can create our new component called  `<my-web-component>`  for example, with it's unique styling and functionality, and use it in **any JS framework or library** . And besides that, it works across **all modern browsers**! Sounds too good to be true, doesn't it? 
+For example, we can create our new component called  `<my-web-component>`, with its unique styling and functionality, and use it in **any JavaScript framework or library** . And besides that, it works across **[most modern browsers!](https://caniuse.com/?search=web%20components)** Sounds too good to be true, doesn't it? 
 
-The fact that these components are framework agnostic, makes creators of components libraries more profitable and future proof as well. This is why this is the next big thing and you should consider getting on board in these early days and take advantage of it.
+The fact that these components are framework agnostic, makes creators of component libraries more profitable and future proof as well. This is why this is the next big thing and you should consider getting on board in these early days and take advantage of it.
 
 If you want to have some extra reading, visit the official website of Web Components at [webcomponents.org](https://www.webcomponents.org/) and the MDN Docs at [developer.mozilla.org/en-US/docs/Web/Web_Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
 
@@ -52,7 +52,7 @@ So, the app consists of an input field, where you can type your name, and a gree
 
 After creating this Web Component, we're gonna build the same app in React, Vue and Angular, and consume it in each app.
 
-To create the Web Component, lets open a code editor and create a JS file, that we can name `search-result.js` and paste this content there:
+To create the Web Component, lets open a code editor and create a `.js` file, that we can name `search-result.js` and paste this content there:
 
 ```javascript
 //search-result.js
@@ -112,7 +112,7 @@ You might be wondering what's all the code above about, so lets see each part st
 const template = document.createElement('template');
 ````
 
-The first step is to create a **[HTML Content Template](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) (`<template>`) element**, which is a mechanism for holding [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML) that is not to be rendered immediately when a page is loaded but may be instantiated subsequently **during runtime using JavaScript**. This `<template>` element can be created with an API provided by the browser `document.createElement()`, that when passed a string with the name of the element we want to create, it returns it. To know more, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement).
+The first step is to create a **[HTML Content Template](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)** (`<template>`) element, which is a mechanism for holding [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML) that is not to be rendered immediately when a page is loaded but may be instantiated subsequently **during runtime using JavaScript**. This `<template>` element can be created with an API provided by the browser `document.createElement()`, that when passed a string with the name of the element we want to create, it returns it. To know more, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement).
 
 
 
@@ -132,7 +132,7 @@ template.innerHTML = `
 `;
 ```
 
-This template element is stored in a variable called `template` that has some properties and one of them is [innerHTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) which sets the HTML content of the element. There, we can add the HTML we want to display on the screen, like `<div>  `, `<p>`, `<a>` and elements.
+This template element is stored in a variable called `template` that has some properties and one of them is [innerHTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) which sets the HTML content of the element. There, we can add the HTML we want to display on the screen, like `<div>  `, `<p>`, `<a>` and any other elements.
 
 
 
@@ -142,9 +142,9 @@ This template element is stored in a variable called `template` that has some pr
 class SearchResult extends HTMLElement { }
 ```
 
-Once we got our template ready, we need JavaScript to instantiate it, and this can be done extending and interface called [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template), creating our custom HTML element.
+Once we got our template ready, we need JavaScript to instantiate it, and this can be done extending an interface called [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template), creating our custom HTML element.
 
-f you are a bit lost here, remember when you have extended a React.Component to create a class based component in React. Here, we're extending the [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) interface instead, which is native browser API, and not a class or interface from the React library.
+If you are a bit lost here, but you have worked with React, remember when you extended `React.Component` to create a class based component in React. Here, we're extending the [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) interface instead, which is native browser API, and not a class or interface from the React library.
 
 
 
@@ -164,27 +164,27 @@ constructor() {
   }
 ```
 
-The constructor of the parent interface needs to be called to inherit all the methods and properties using the method `super()`. If you have used React in the early days, `super()` required when creating a class based component. This `constructor()` runs right away when the components is created at runtime.
+The constructor of the parent interface needs to be called to inherit all the methods and properties using the method `super()`. If you have used React in the early days, `super()` was required when creating a class based component. This `constructor()` runs right away when the component is created at runtime.
 
-To recap, we have already created the template, and created the HTML element. Now, it's time to use the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to provide encapsulation — which means being able to keep the markup structure, style, and behavior hidden and separate from other code on the page so that different parts do not clash, and the code can be kept nice and clean. The Shadow DOM API is a key part of this, providing a way to attach a hidden separated DOM to an element.
+To recap, we have already created the template and the HTML element. Now, it's time to use the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to provide encapsulation — which means being able to keep the markup structure, style, and behavior hidden and separate from other code on the page so that different parts do not clash, and the code can be kept nice and clean. The Shadow DOM API is a key part of this, providing a way to attach a hidden separated DOM to an element.
 
 This step of using the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) is optional, but it's the usual way of writing clean components.
 
-How to attach the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to an element, there's a method called [`attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) which accepts an object with key value pair`mode: 'open'`,  to set the *encapsulation mode* for the shadow DOM tree. When is `open`, the elements of the shadow root are accessible from JavaScript outside the root, for example using [`Element.shadowRoot`](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot). 
+To attach the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to an element, there's a method called [`attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) which accepts an object with a key value pair `mode: 'open'`,  to set the *encapsulation mode* for the shadow DOM tree. When is `open`, the elements of the shadow root are accessible from JavaScript outside the root, for example using [`Element.shadowRoot`](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot). 
 
 In other words, when writing in Vanilla JavaScript, we access the DOM elements with the document object, like for example `document.querySelector('#title')`; to select an element with `id='title`; now, our Web Component will live inside the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) (not at the main DOM tree root level) so we CAN'T use the document object, but the [shadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot) object instead, which is the interface of the Shadow DOM API and is the root node of a DOM subtree that is rendered separately from a document's main DOM tree.
 
 So, now, we can access the web component at runtime with the [shadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot) object and the Web Component's content stored in the `template` variable, and we can attach and remove event listeners, and so on.
 
-The line of code holding` this.shadowRoot.appendChild(template.content.cloneNode(true));` deep clones all the content of the template and appends  it as a child to our Web Component. More info about it [here](https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode).
+The line of code holding ` this.shadowRoot.appendChild(template.content.cloneNode(true));` deep clones all the content of the template and appends it as a child to our Web Component. More info about it [here](https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode).
 
-The `href` attribute can't be hard-coded, because it depends on what the user types inside the input field for the name. So this content must be added at runtime and, as a consequence, the `<a>` element must also be accessed at runtime and have its `href` attribute value initialized with this code: `this.shadowRoot.querySelector('a').href = '';`
+The `href` attribute can't be hard-coded, because it depends on what the user types inside the input field for the name. So, this content must be added at runtime and, as a consequence, the `<a>` element must also be accessed at runtime and have its `href` attribute value initialized with this code: `this.shadowRoot.querySelector('a').href = '';`
 
 
 
 5) **Declare the watched attributes:**
 
-The app will pass the dynamic name via one attribute called `name-attribute` , but web components don't watch for attribute value changes by default, so this must be do manually with a static method:  
+The app will pass the dynamic name via one attribute called `name-attribute` , but Web Components don't watch for attribute value changes by default, so this must be done manually with a static method:  
 
 ```javascript
 static get observedAttributes() {
@@ -212,13 +212,13 @@ The `attributeChangedCallback()` method has three arguments: the `name` of the a
 
 The `if` could be omitted in this case because we only have one attribute watched for, but in general, there might be more than one and we want to react in different ways depending on which one changed. Another nice approach is to use a `switch` statement instead.
 
-The piece of code above generates a  Google search query holding the dynamic `newValue`.
+The piece of code above generates a Google search query holding the dynamic `newValue`.
 
 
 
 7) **Let the browser know about our new custom Web Component:**
 
-Our web component has already been created, but one more step is missing. The browser only knows about the default HTML elements like `<div>`, `<p>` and so on, but it doesn't know what a `<search-result>` tag is, for example. To let the browser know about it, we need to interact with the [CustomElementRegistry](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry) which can be instantiated and accessed via `window.customElements` and then access the [define()](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method inside it:
+Our Web Component has already been created, but one more step is missing. The browser only knows about the default HTML elements like `<div>`, `<p>` and so on, but it doesn't know what a `<search-result>` tag is, for example. To let the browser know about it, we need to interact with the [CustomElementRegistry](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry) which can be instantiated and accessed via `window.customElements` and then access the [define()](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method inside it:
 
  ```javascript
 window.customElements.define('search-result', SearchResult);
@@ -232,7 +232,7 @@ The first argument we pass to it is the name of the new custom element. **Note t
 
 **Bonus:**
 
-There are other life-cycle methods available inside a Web Component, and this are:
+There are other life-cycle methods available inside a Web Component, and these are:
 
 - `connectedCallback`: Invoked when the custom element is first connected to the document's DOM.
 - `disconnectedCallback`: Invoked when the custom element is disconnected from the document's DOM.
@@ -248,7 +248,7 @@ React is the most popular Front End library used nowadays to build apps. So, let
 
 1) **Create the App**
 
-Let's call the app `react-web-components`. In any folder type these commands, one at a time:
+Let's call the app `react-web-components`. Feel free to choose other name as well. In any folder, type these commands, one at a time:
 
 ````
 npx create-react-app react-web-components
@@ -262,14 +262,22 @@ You'll see the following on `localhost:3000` in your browser:
 
 
 
-2) **Modify `/src/App.js`** by pasting this code inside:
+2) **Add our Web Component to the App**,  by copying the `search-result.js`  file containing our component inside, and paste it inside a folder that we'll call `web-components` inside the `src` folder of the project. So, the web-component will be located at `/src/web-components/search-result.js`.
+
+![](./images/react-2.jpg)
+
+
+
+3) **Modify `/src/App.js`** by pasting this code inside:
 
 ```javascript
 //App.js
 
 import { useState } from 'react';
-import './App.css';
 
+import './App.css';
+//import our Web Component
+import './web-components/search-result';
 
 function App() {
 
@@ -298,7 +306,7 @@ The code above stores the value from the `<input>` field in the state and passes
 
 
 
-3) **Modify `/src/App.css`**, by adding this lines of code, to center the text and move the content further from the top search bar of the browser:
+4) **Modify `/src/App.css`**, by adding this lines of code to give the app a better look.
 
 ```css
 //App.css
@@ -316,25 +324,11 @@ The code above stores the value from the `<input>` field in the state and passes
 
 
 
-4) **Add our Web Component to the App**,  by copying the `search-result.js`  file containing our component inside, and paste it inside a folder that we'll call `web-components` inside the `public` folder of the project. So, the web-component will be located at `/public/web-components/search-result.js`.
-
-![](/home/esteban/Documents/coding/articles/web-components/article/intro-article/images/react-2.jpg)
-
-Placing a `.js` file in a folder is not enough for the app to be able to use straight away; we need to let it know about this file, by adding this line of code at the end of the `<body>` inside `/public/index.html`, where scripts are usually added:
-
-```html
-//index.html
-
-<script src="%PUBLIC_URL%/web-components/search-result.js"></script>
-```
-
-
-
 5) **Add two polyfills to get browser support and to use Web Components in ES5 transpiled code:**
 
 The following steps are extracted from a [tutorial](https://vaadin.com/learn/tutorials/using-web-components-in-react) at [vaadin.com](https://vaadin.com):
 
-Although most modern browsers ship with built-in support for Web Components, there are still users out there with older browsers. If you want to make your app available to them as well, you want to include *polyfills* that emulate the functionality in browsers without native support.
+Although most modern browsers ship with built-in support for Web Components, there are still users out there with older browsers. If you want to make your app available to them as well, you need to include *polyfills* that emulate the functionality in browsers without native support.
 
 We use the `webcomponentsjs` polyfills and we also make use of `vendor-copy` to make the polyfills available on runtime. 
 
@@ -381,7 +375,7 @@ d) Run this command in the terminal:
 npm install
 ```
 
-After this process finished, you'll see a `vendor` folder, at the same level as `public` and `src` folders. You'll have two files inside the `vendor` folder: `custom-elements-es5-adapter.js` and `webcomponents-bundle.js`. 
+After this process finished, you'll see a `/public/vendor` folder that has been created. You'll have two files inside it: `custom-elements-es5-adapter.js` and `webcomponents-bundle.js`. 
 
 ![](./images/react-3.jpg)
 
@@ -408,7 +402,7 @@ Open the browser on `localhost:3000` and you'll see this:
 
 
 
-That's it! **Our React App uses our custom Web Component now! Well done!** 
+That's it! **Our React app uses our custom Web Component now! Well done!** 
 
 
 
@@ -442,7 +436,13 @@ If you open the browser and go to `localhost:8080`, you should see this:
 
 
 
-3) **Modify `/src/App.vue`** file by replacing its default content with this code:
+3) **Add our Web Component to the App**,  by copying the `search-result.js`  file containing our component, and paste it in inside a folder that we'll call `web-components` inside the `src` folder of the project. So, the web-component will be located at `/src/web-components/search-result.js`.
+
+![](./images/vue-2.jpg)
+
+
+
+4) **Modify `/src/App.vue`** file by replacing its default content with this code:
 
 ```vue
 //App.vue
@@ -462,16 +462,19 @@ If you open the browser and go to `localhost:8080`, you should see this:
 </template>
 
 <script>
+  //import our Web Component
+  import './web-components/search-result.js';
   
   export default {
+
     data() {
       return {
-        name: ''
+        name: '' 
       }
-  }
+  } 
 
   }
-</script>
+</script>   
 
 <style>
 .App {
@@ -482,20 +485,6 @@ If you open the browser and go to `localhost:8080`, you should see this:
   margin-top: 20px;
 }
 </style>
-```
-
-
-
-4) **Add our Web Component to the App**,  by copying the `search-result.js`  file containing our component inside, and paste it in inside a folder that we'll call `web-components` inside the `public` folder of the project. So, the web-component will be located at `/public/web-components/search-result.js`.
-
-![](./images/vue-2.jpg)
-
-Now, lets import the `search-result.js` file into `/public/index.html`, at the end of the `<body>` tag:
-
-```html
-//index.html
-
-<script src="/web-components/search-result.js"></script>
 ```
 
 
@@ -514,7 +503,7 @@ npm install --save-dev copy-webpack-plugin @webcomponents/webcomponentsjs
 
 b) Copy the polyfills:
 
-The first thing we need to do is copy over the polyfills. You can do this by providing Vue with an additional Webpack configuration. Create a new file, `vue.config.js` in the root of your project.
+The first thing we need to do is copy over the polyfills. You can do this by providing Vue with an additional Webpack configuration. Create a new file, `vue.config.js` at the root of your project.
 
 ````javascript
 //vue.config.js
@@ -538,6 +527,10 @@ module.exports = {
   }
 };
 ````
+
+![](./images/vue-3.jpg)
+
+
 
 The `CopyWebpackPlugin` will now copy over all the needed JavaScript files into a `webcomponents` directory in the `dist` directory when building the app. 
 
@@ -566,7 +559,7 @@ npm run serve
 
 Open the browser on `localhost:8080` and you'll see this:
 
-![](./images/vue-3.jpg)
+![](./images/vue-4.jpg)
 
 That's it! **Our Vue App uses our custom Web Component now! Congratulations!** 
 
@@ -604,11 +597,15 @@ If you open the browser and go to `localhost:4200`, you should see this:
 
 
 
-3) **Modify the `/src/app/app.module.ts` file:**
+3) **Add our Web Component to the App**,  by copying the `search-result.js`  file containing our component, and paste it in inside a folder that we'll call `web-components` inside the `/src/app` folder of the project. So, the web-component will be located at `/src/app/web-components/search-result.js`.
+
+![](./images/angular-2.jpg)
+
+4) **Modify the `/src/app/app.module.ts` file:**
 
 To use two way data binding in our `<input>` element, lets add the `FormsModule` to the `imports` array.
 
-Angular will NOT recognize by default our custom HTML tag of our Web Component, so lets add a `schemas` property inside `@NgModule` decorator, and add `CUSTOM_ELEMENTS_SCHEMA` inside the  `schemas` array . The code should look like this:
+Angular will NOT recognize by default our custom HTML tag of our Web Component, so lets add a `schemas` property inside the `@NgModule` decorator, and add `CUSTOM_ELEMENTS_SCHEMA` inside the `schemas` array. The code should look like this:
 
 ```typescript
 //app.module.ts
@@ -636,10 +633,10 @@ export class AppModule { }
 
 
 
-4) **Modify `/src/app/app.component.html`**  by replacing its default content with this code:
+5) **Modify `/src/app/app.component.html`**  by replacing its default content with this code:
 
 ```html
-//app.component.ts
+//app.component.html
 
 <div class="App">
       
@@ -658,7 +655,7 @@ export class AppModule { }
 
 
 
-5) **Modify `/src/app/app.component.css`** by adding this content inside:
+6) **Modify `/src/app/app.component.css`** by adding this content inside:
 
 ```css
 //app.component.css
@@ -675,23 +672,30 @@ export class AppModule { }
 
 
 
-6) **Add our Web Component to the App**,  by copying the `search-result.js`  file containing our component inside, and paste it in inside a folder that we'll call `web-components` inside the `/src/assets` folder of the project. So, the web-component will be located at `/src/assets/web-components/search-result.js`.
+7) **Modify `/src/app/app.component.ts`** by adding this content inside:
 
-![](./images/angular-2.jpg)
+```typescript
+//app.component.ts
 
-Now, lets import the `search-result.js` file inside `/src/index.html`, at the end of the `<body>` tag:
+import { Component } from '@angular/core';
+//import our Web Component
+import './web-components/search-result.js';
 
-```html
-//index.html
-
-<script src="assets/web-components/search-result.js"></script>
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  name;
+}
 ```
 
 
 
-7) **Add the polyfills:**
+8) **Add the polyfills:**
 
-if you skipped the React and Vue sections and you don't know about what these polyfills are, read about them, above in the step 5 of the React and Vue sections
+if you skipped the React and Vue sections and you don't know about what these polyfills are, read about them, above, in the step 5 of the React and Vue sections.
 
 This steps were copied from a [tutorial](https://vaadin.com/learn/tutorials/using-web-components-in-angular) at [vaadin.com](https://vaadin.com).
 
@@ -721,9 +725,9 @@ c) Then, include the loader and an optional import for the ES5 compatibility scr
 ```html
 //index.html
 
-<script src="webcomponents/webcomponents-loader.js"></script>
+<script src="webcomponents/webcomponents-loader.js"></script> 
 <script>
-  if (!window.customElements{document.write('<!--');}
+  if (!window.customElements){document.write('<!--');}
 </script>
 <script src="webcomponents/custom-elements-es5-adapter.js"></script>
 <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
@@ -731,7 +735,7 @@ c) Then, include the loader and an optional import for the ES5 compatibility scr
 
 
 
-7) **Verify that you can run the application** running this command on the terminal:
+9) **Verify that you can run the application** running this command on the terminal:
 
 ```bash
 ng serve
