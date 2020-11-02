@@ -330,6 +330,8 @@ The following steps are extracted from a [tutorial](https://vaadin.com/learn/tut
 
 Although most modern browsers ship with built-in support for Web Components, there are still users out there with older browsers. If you want to make your app available to them as well, you need to include *polyfills* that emulate the functionality in browsers without native support.
 
+To know more about these polyfills, check out this [gitHub repo](https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs).
+
 We use the `webcomponentsjs` polyfills and we also make use of `vendor-copy` to make the polyfills available on runtime. 
 
 a) Let’s start by installing them. Open the terminal and run this command:
@@ -496,6 +498,10 @@ The following steps are extracted from a [tutorial](https://vaadin.com/learn/tut
 a) Install the polyfills:
 
 The [webcomponents.js](https://github.com/webcomponents/webcomponentsjs) polyfill comes with a loader script that can be used to load only the polyfills a particular browser needs. It loads the polyfills dynamically so it cannot be imported directly as a JS dependency that gets built by Webpack. Instead, you need to copy over the dependencies and include the loader in your index file. The library also contains an ES5 compatibility script for apps that have been transpiled into ES5.
+
+To know more about these polyfills, check out this [gitHub repo](https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs).
+
+Open the terminal and type this command:
 
 ``` bash
 npm install --save-dev copy-webpack-plugin @webcomponents/webcomponentsjs
@@ -697,7 +703,9 @@ export class AppComponent {
 
 if you skipped the React and Vue sections and you don't know about what these polyfills are, read about them, above, in the step 5 of the React and Vue sections.
 
-This steps were copied from a [tutorial](https://vaadin.com/learn/tutorials/using-web-components-in-angular) at [vaadin.com](https://vaadin.com).
+To know more about these polyfills, check out this [gitHub repo](https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs).
+
+The following steps were copied from a [tutorial](https://vaadin.com/learn/tutorials/using-web-components-in-angular) at [vaadin.com](https://vaadin.com).
 
 a) Run this code in the terminal:
 
