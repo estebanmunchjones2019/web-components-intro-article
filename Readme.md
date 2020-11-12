@@ -20,7 +20,7 @@ Table of contents:
 
   
 
-_Special thanks to: [Nikos Tsokos](https://twitter.com/n_tsokos), member of [Scotland's Angular Meetup](https://www.youtube.com/channel/UCWIfQn9vUayDkzrrDIjdAjg) who inspired me to write this article,  [Gonzalo Aguirre](https://twitter.com/\_gonaguirre) Co-Founder & CTO of [Underscope](https://underscope.io) and my fiancée Sarah Acheson for reviewing it._
+_-Special thanks to: [Nikos Tsokos](https://twitter.com/n_tsokos), member of [Scotland's Angular Meetup](https://www.youtube.com/channel/UCWIfQn9vUayDkzrrDIjdAjg) who inspired me to write this article,  [Gonzalo Aguirre](https://twitter.com/\_gonaguirre) Co-Founder & CTO of [Underscope](https://underscope.io) and my fiancée Sarah Acheson for reviewing it.-_
 
 **Note: when you copy and paste code from the code snippets, don't include the top comment that tells the name of the file, like `//App.js` or `//index.html` because it may break your code.**
 
@@ -667,13 +667,13 @@ export class AppModule { }
 //app.component.css
 
 .App {
-    text-align: center;
-    margin-top: 30px;
-  }
+   text-align: center;
+   margin-top: 30px;
+}
   
-  .greeting {
-    margin-top: 20px;
-  }
+.greeting {
+   margin-top: 20px;
+}
 ```
 
 
