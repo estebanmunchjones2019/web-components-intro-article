@@ -8,15 +8,15 @@ Lets get our hands dirty and build our first Web Component in Vanilla JavaScript
 
 Table of contents:  
 
-- [What are Web Components?](#What-are-web-components)
+- ###### [What are Web Components?](#What-are-web-components)
 
-- [Building our first Web Component with Vanilla JavaScript](#Building-our-first-Web-Component-with-Vanilla-JavaScript)
+- ###### [Building our first Web Component with Vanilla JavaScript](#Building-our-first-Web-Component-with-Vanilla-JavaScript)
 
-- [Consuming the Web Component in React](#Consuming-the-Web-Component-in-React)
+- ###### [Consuming the Web Component in React](#Consuming-the-Web-Component-in-React)
 
-- [Consuming the Web Component in Vue](#Consuming-the-Web-Component-in-Vue)
+- ###### [Consuming the Web Component in Vue](#Consuming-the-Web-Component-in-Vue)
 
-- [Consuming the Web Component in Angular](#Consuming-the-Web-Component-in-Angular)
+- ###### [Consuming the Web Component in Angular](#Consuming-the-Web-Component-in-Angular)
 
   
 
